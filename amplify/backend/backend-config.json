@@ -1,0 +1,38 @@
+{
+	"auth": {
+		"covid19sdbcc9ff73": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	},
+	"storage": {
+		"dynamo9f597ff1": {
+			"service": "DynamoDB",
+			"providerPlugin": "awscloudformation"
+		},
+		"static": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "S3Triggerae9fd039",
+					"attributes": [
+						"Name",
+						"Arn",
+						"LambdaExecutionRole"
+					]
+				}
+			]
+		}
+	},
+	"function": {
+		"S3Triggerae9fd039": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true
+		}
+	}
+}
