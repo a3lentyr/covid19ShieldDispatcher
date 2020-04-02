@@ -7,16 +7,29 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row>
         <span>Covid19 3D Shield Dispatch</span>
-        <span class="loginBar"> <button mat-button *ngIf="!signedIn" (click)="onSignIn()">Se connecter</button>
+        <span class="loginBar"> <button mat-button *ngIf="!signedIn" (click)="onSignIn()">Se connecter
+                {{signedIn}}</button>
             <button mat-button *ngIf="signedIn" (click)="onLogout()">Deconnexion</button></span>
     </mat-toolbar-row>
 </mat-toolbar>
 
 <div class="jumbotron">
+    <div class="majorAction" (click)="onAdd()">
 
+        <mat-icon aria-hidden="false" aria-label="Example thumbs up SVG icon" class="majorActionIcon">verified_user
+        </mat-icon>
+        <h2>J'ai besoin de matériel de protection</h2>
+    </div>
+    <div class="majorAction">
+
+        <mat-icon aria-hidden="false" aria-label="Example thumbs up SVG icon" class="majorActionIcon">print</mat-icon>
+        <h2>Je veux aider à fabriquer</h2>
+    </div>
 </div>
 
+
 <div class="demandContainer">
+    <div #gmap style="width:30%;height:300px"></div>
     <mat-card *ngFor="let demand of demandList" class="demandCard">
         <mat-card-header>
             <div mat-card-avatar class="example-header-image"></div>
@@ -24,10 +37,14 @@
             <mat-card-subtitle>{{demand.howMany}}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
-            {{demand.forWhere}}
+            {{demand.description}}
+            <p>
+
+                {{demand.forWhere}}
+            </p>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-raised-button color="primary">Je participe !</button>
+            <button mat-raised-button color="primary" (click)="onRemove(demand)">Je participe !</button>
         </mat-card-actions>
     </mat-card>
 </div>

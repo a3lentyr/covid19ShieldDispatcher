@@ -22,8 +22,11 @@
     "@angular/platform-browser-dynamic": "~8.1.2",
     "@angular/router": "~8.1.2",
     "@aws-amplify/ui": "^1.2.3",
+    "@types/google__maps": "^0.5.12",
+    "@types/googlemaps": "^3.39.3",
     "aws-amplify": "^2.3.0",
     "aws-amplify-angular": "^4.1.9",
+    "googlemaps": "^1.12.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
