@@ -31,7 +31,7 @@
 				"HostedUIDomain": "covid19sdbcc9ff73-bcc9ff73-dev",
 				"IdentityPoolId": "eu-west-2:826ba5bf-ed46-4537-993f-80e0339fbc7a",
 				"IdentityPoolName": "covid19sdbcc9ff73_identitypool_bcc9ff73__dev",
-				"OAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\"],\"LogoutURLs\":[\"http://localhost:3000/\"]}",
+				"OAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://master.d2klnf7x1s8sec.amplifyapp.com/\"],\"LogoutURLs\":[\"https://master.d2klnf7x1s8sec.amplifyapp.com/\"]}",
 				"UserPoolName": "covid19sdbcc9ff73_userpool_bcc9ff73"
 			},
 			"lastPushDirHash": "Svz0tAu67fDM1SV5cER66/liT/o="
