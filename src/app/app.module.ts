@@ -19,6 +19,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { PrinterPageComponent } from './printer-page/printer-page.component';
 import { AuthServiceService } from './auth-service.service';
 import { HelpPageComponent } from './help-page/help-page.component';
+import { PrinterAdvanceDialogComponent } from './printer-advance-dialog/printer-advance-dialog.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HelpPageComponent } from './help-page/help-page.component';
     NewArticleComponentComponent,
     HomePageComponent,
     PrinterPageComponent,
-    HelpPageComponent
+    HelpPageComponent,
+    PrinterAdvanceDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,8 @@ import { HelpPageComponent } from './help-page/help-page.component';
     MatFormFieldModule
   ],
   entryComponents: [
-    NewArticleComponentComponent
+    NewArticleComponentComponent,
+    PrinterAdvanceDialogComponent
   ],
 
   providers: [

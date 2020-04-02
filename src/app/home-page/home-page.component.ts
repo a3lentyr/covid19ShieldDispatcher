@@ -2,7 +2,8 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { AmplifyService } from 'aws-amplify-angular';
-import { } from '@types/googlemaps';
+
+import { } from 'googlemaps';
 import { NewArticleComponentComponent } from '../new-article-component/new-article-component.component';
 import { DialogData } from '../types';
 import { AuthServiceService } from '../auth-service.service';
