@@ -1,3 +1,33 @@
-<amplify-authenticator></amplify-authenticator>
+<!--amplify-authenticator></amplify-authenticator>
 
-<router-outlet></router-outlet>
+<router-outlet></router-outlet-->
+
+
+
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span>Covid19 3D Shield Dispatch</span>
+        <span class="loginBar"> <button mat-button *ngIf="!signedIn" (click)="onSignIn()">Se connecter</button>
+            <button mat-button *ngIf="signedIn" (click)="onLogout()">Deconnexion</button></span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="jumbotron">
+
+</div>
+
+<div class="demandContainer">
+    <mat-card *ngFor="let demand of demandList" class="demandCard">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{demand.forWho}}</mat-card-title>
+            <mat-card-subtitle>{{demand.howMany}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            {{demand.forWhere}}
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary">Je participe !</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

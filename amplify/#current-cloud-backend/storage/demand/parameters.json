@@ -1,0 +1,5 @@
+{
+    "tableName": "demand",
+    "partitionKeyName": "demandId",
+    "partitionKeyType": "S"
+}

@@ -25,10 +25,21 @@ const awsmobile = {
         {
             "tableName": "dynamo9f597ff1-dev",
             "region": "eu-west-2"
+        },
+        {
+            "tableName": "demand-dev",
+            "region": "eu-west-2"
         }
     ],
     "aws_user_files_s3_bucket": "covid19sd35467e3530b849caa746ddae0ca31395191840-dev",
-    "aws_user_files_s3_bucket_region": "eu-west-2"
+    "aws_user_files_s3_bucket_region": "eu-west-2",
+    "aws_cloud_logic_custom": [
+        {
+            "name": "demandAPI",
+            "endpoint": "https://2yqw9bjer6.execute-api.eu-west-2.amazonaws.com/dev",
+            "region": "eu-west-2"
+        }
+    ]
 };
 
 

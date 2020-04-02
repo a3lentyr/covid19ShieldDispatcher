@@ -1,0 +1,35 @@
+{
+    "paths": [
+        {
+            "name": "/demand",
+            "lambdaFunction": "demandAllLambda",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "demandAPI",
+    "apiName": "demandAPI",
+    "functionArns": [
+        {
+            "lambdaFunction": "demandAllLambda"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-covid19sd-dev-191840-authRole",
+        "unAuthRoleName": "amplify-covid19sd-dev-191840-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "demandAllLambda",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ],
+    "uuid": "3c4d65fd"
+}

@@ -186,11 +186,92 @@
 				}
 			}
 		},
+		"storagedemand": {
+			"Type": "AWS::CloudFormation::Stack",
+			"Properties": {
+				"TemplateURL": "https://s3.amazonaws.com/amplify-covid19sd-dev-191840-deployment/amplify-cfn-templates/storage/demand-cloudformation-template.json",
+				"Parameters": {
+					"tableName": "demand",
+					"partitionKeyName": "demandId",
+					"partitionKeyType": "S",
+					"env": "dev"
+				}
+			}
+		},
 		"functionS3Triggerae9fd039": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
 				"TemplateURL": "https://s3.amazonaws.com/amplify-covid19sd-dev-191840-deployment/amplify-cfn-templates/function/S3Triggerae9fd039-cloudformation-template.json",
 				"Parameters": {
+					"env": "dev"
+				}
+			}
+		},
+		"functiondemandAllLambda": {
+			"Type": "AWS::CloudFormation::Stack",
+			"Properties": {
+				"TemplateURL": "https://s3.amazonaws.com/amplify-covid19sd-dev-191840-deployment/amplify-cfn-templates/function/demandAllLambda-cloudformation-template.json",
+				"Parameters": {
+					"storagedemandName": {
+						"Fn::GetAtt": [
+							"storagedemand",
+							"Outputs.Name"
+						]
+					},
+					"storagedemandArn": {
+						"Fn::GetAtt": [
+							"storagedemand",
+							"Outputs.Arn"
+						]
+					},
+					"env": "dev"
+				}
+			}
+		},
+		"functionsingleDemand": {
+			"Type": "AWS::CloudFormation::Stack",
+			"Properties": {
+				"TemplateURL": "https://s3.amazonaws.com/amplify-covid19sd-dev-191840-deployment/amplify-cfn-templates/function/singleDemand-cloudformation-template.json",
+				"Parameters": {
+					"storagedemandName": {
+						"Fn::GetAtt": [
+							"storagedemand",
+							"Outputs.Name"
+						]
+					},
+					"storagedemandArn": {
+						"Fn::GetAtt": [
+							"storagedemand",
+							"Outputs.Arn"
+						]
+					},
+					"env": "dev"
+				}
+			}
+		},
+		"apidemandAPI": {
+			"Type": "AWS::CloudFormation::Stack",
+			"Properties": {
+				"TemplateURL": "https://s3.amazonaws.com/amplify-covid19sd-dev-191840-deployment/amplify-cfn-templates/api/demandAPI-cloudformation-template.json",
+				"Parameters": {
+					"authRoleName": {
+						"Ref": "AuthRoleName"
+					},
+					"unauthRoleName": {
+						"Ref": "UnauthRoleName"
+					},
+					"functiondemandAllLambdaName": {
+						"Fn::GetAtt": [
+							"functiondemandAllLambda",
+							"Outputs.Name"
+						]
+					},
+					"functiondemandAllLambdaArn": {
+						"Fn::GetAtt": [
+							"functiondemandAllLambda",
+							"Outputs.Arn"
+						]
+					},
 					"env": "dev"
 				}
 			}
