@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { AmplifyService } from 'aws-amplify-angular';
 import Auth from '@aws-amplify/auth';
@@ -6,6 +7,8 @@ import { Hub } from '@aws-amplify/core';
 import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { } from '@types/googlemaps';
+import { NewArticleComponentComponent } from './new-article-component/new-article-component.component';
+import { DialogData } from './types';
 
 export interface AuthState {
   isLoggedIn: boolean;
@@ -52,7 +55,7 @@ export class AppComponent {
 
   ownMarker: google.maps.Marker;
 
-  constructor(public amplifyService: AmplifyService) {
+  constructor(public dialog: MatDialog, public amplifyService: AmplifyService) {
 
     // Get the user on creation of this service
     Auth.currentAuthenticatedUser().then(
@@ -87,6 +90,7 @@ export class AppComponent {
 
     this.updateList();
 
+    // init map
     var mapProp = {
       center: new google.maps.LatLng(18.5793, 73.8143),
       zoom: 11,
@@ -139,23 +143,21 @@ export class AppComponent {
     });
   }
 
-  onAdd() {
+  onAddDialog() {
+    const dialogRef = this.dialog.open(NewArticleComponentComponent, {
+      width: '500px',
+      data: { email: this.user.email }
+    });
+
+    dialogRef.afterClosed().subscribe((result: DialogData) => {
+      if (result)
+        this.onAdd(result);
+    });
+  }
+
+  onAdd(mockupData: DialogData) {
     // test if logged in, else logon
     this.getLocation().then((position) => {
-
-      let mockupData = {
-        demandId: new Date().getTime() + '_' + Math.random().toString(36).substr(2, 9),
-        forWho: "forWho",
-        forWhereLong: position.coords.longitude + (Math.random() / 100 - 0.005),
-        forWhereLat: position.coords.latitude + (Math.random() / 100 - 0.005),
-        description: "This a description of the need",
-        howMany: 10,
-        status: 0,
-        printBy: "printBy",
-        deliveryBy: "deliveryBy",
-        logHistory: [],
-        comment: "comment"
-      };
 
       this.amplifyService.api().post('demandAPI', '/demand', { body: mockupData }).then(data => {
         this.updateList();

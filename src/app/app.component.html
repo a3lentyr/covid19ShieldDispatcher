@@ -14,7 +14,7 @@
 </mat-toolbar>
 
 <div class="jumbotron">
-    <div class="majorAction" (click)="onAdd()">
+    <div class="majorAction" (click)="onAddDialog()">
 
         <mat-icon aria-hidden="false" aria-label="Example thumbs up SVG icon" class="majorActionIcon">verified_user
         </mat-icon>
@@ -27,24 +27,25 @@
     </div>
 </div>
 
-
 <div class="demandContainer">
     <div #gmap style="width:30%;height:300px"></div>
+
     <mat-card *ngFor="let demand of demandList" class="demandCard">
-        <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-header class="cardTitle">
             <mat-card-title>{{demand.forWho}}</mat-card-title>
-            <mat-card-subtitle>{{demand.howMany}}</mat-card-subtitle>
+            <mat-card-subtitle>{{demand.howMany}} Visières</mat-card-subtitle>
         </mat-card-header>
-        <mat-card-content>
+        <mat-card-content class="mainCardContent">
             {{demand.description}}
+            <br>
             <p>
 
                 {{demand.forWhere}}
             </p>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-raised-button color="primary" (click)="onRemove(demand)">Je participe !</button>
+            <button mat-raised-button color="primary" (click)="onRemove(demand)">Je participe
+                !</button>
         </mat-card-actions>
     </mat-card>
 </div>
