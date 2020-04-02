@@ -1,5 +1,4 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { } from '@types/googlemaps';
 
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DialogData } from '../types';
@@ -23,8 +22,8 @@ export class NewArticleComponentComponent implements OnInit {
       demandId: new Date().getTime() + '_' + Math.random().toString(36).substr(2, 9),
       forWho: this.data.email,
       forWhere: "",
-      forWhereLong: "0",
-      forWhereLat: "0",
+      forWhereLong: 0,
+      forWhereLat: 0,
       description: "",
       howMany: 10,
       model: "shield_v1",

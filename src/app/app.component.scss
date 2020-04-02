@@ -1,58 +1,6 @@
-.jumbotron{
 
-    display:flex;
-    margin:50px;
-
-    align-items: center;
-    justify-content: center;
-}
-
-.majorAction{
-    padding:20px;
-    margin:auto;
-    width:300px;
-    text-align: center;
-    background:rgb(200,200,255);
-    transition:all 0.3s ease;
-}
-
-.majorAction:hover{
-    opacity:1;
-    box-shadow: inset 0 0 0 5px #673ab7;
-    background:rgb(255,255,255);
-}
-
-.majorActionIcon{
-
-    font-size: 100px;
-    width:100px;
-    margin:auto;
-}
 
 .loginBar{
     float:right;
     margin-left:auto;
-}
-
-.demandCard {
- margin:20px;
- width:200px;
- height:200px;
-}
-.cardTitle{
-    overflow:hidden;
-}
-
-.mainCardContent{
-    width:100%;
-    height:80px;
-}
-
-
-.demandContainer {
-    display:flex;
-    flex-wrap: wrap;
-
-  align-items: center;
-  justify-content: center;
 }

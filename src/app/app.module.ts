@@ -15,11 +15,18 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { NewArticleComponentComponent } from './new-article-component/new-article-component.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { PrinterPageComponent } from './printer-page/printer-page.component';
+import { AuthServiceService } from './auth-service.service';
+import { HelpPageComponent } from './help-page/help-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewArticleComponentComponent
+    NewArticleComponentComponent,
+    HomePageComponent,
+    PrinterPageComponent,
+    HelpPageComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +47,8 @@ import { NewArticleComponentComponent } from './new-article-component/new-articl
   ],
 
   providers: [
-    AmplifyService
+    AmplifyService,
+    AuthServiceService
   ],
   bootstrap: [AppComponent]
 })
