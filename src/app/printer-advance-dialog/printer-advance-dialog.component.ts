@@ -47,9 +47,12 @@ export class PrinterAdvanceDialogComponent implements OnInit {
 
   onValidateClick(): void {
     var place = this.autocomplete.getPlace();
-    this.mockupData.forWhere = place.formatted_address;
-    this.mockupData.forWhereLat = place.geometry.location.lat();
-    this.mockupData.forWhereLong = place.geometry.location.lng();
+    if (place) {
+
+      this.mockupData.deliveryWhere = place.formatted_address;
+      this.mockupData.deliveryWhereLat = place.geometry.location.lat();
+      this.mockupData.deliveryWhereLong = place.geometry.location.lng();
+    }
     this.dialogRef.close(this.mockupData);
   }
 

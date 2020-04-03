@@ -189,8 +189,7 @@ export class HomePageComponent implements OnInit {
   }
 
   onUpdate(demand) {
-    let demandId = demand.demandId;
-    this.amplifyService.api().put('demandAPI', '/demand/object/' + demandId, {}).then(data => {
+    this.amplifyService.api().put('demandAPI', '/demand', { body: demand }).then(data => {
       this.updateList();
     });
 
