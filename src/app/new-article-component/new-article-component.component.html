@@ -13,6 +13,11 @@
         </mat-form-field>
 
         <mat-form-field class="fullWidth">
+            <mat-label>Nombre demandé</mat-label>
+            <input matInput required [(ngModel)]="mockupData.howMany" name="howMany" type="number">
+        </mat-form-field>
+
+        <mat-form-field class="fullWidth">
             <mat-label>Mon addresse</mat-label>
             <input id="searchTextField" matInput required [(ngModel)]="mockupData.forWhere" name="forWhere">
         </mat-form-field>

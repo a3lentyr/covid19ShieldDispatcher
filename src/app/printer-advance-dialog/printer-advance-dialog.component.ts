@@ -26,7 +26,7 @@ export class PrinterAdvanceDialogComponent implements OnInit {
     public dialogRef: MatDialogRef<PrinterAdvanceDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data) {
 
-    this.mockupData = data.demand;
+    this.mockupData = JSON.parse(JSON.stringify(data.demand));
     this.mockupData.printBy = data.email;
   }
 

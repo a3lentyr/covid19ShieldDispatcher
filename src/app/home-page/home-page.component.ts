@@ -74,11 +74,22 @@ export class HomePageComponent implements OnInit {
         };
         this.showPosition(element.marker, position, element.forWho);
       });
+
+      this.computeDistanceToMe(this.demandList).then((result) => {
+        for (let index = 0; index < result.length; index++) {
+
+          this.demandList[index]["_distance_to_me"] = result[index];
+
+        }
+        this.demandList.sort((a, b) => a["_distance_to_me"] - b["_distance_to_me"]);
+      })
+
     });
 
     navigator.geolocation.getCurrentPosition((position) => {
       this.showPosition(this.ownMarker, position, "Ma position", true);
     });
+
   }
 
   onAddDialog() {
@@ -129,6 +140,52 @@ export class HomePageComponent implements OnInit {
 
       }
     });
+  }
+
+  distFrom(lat1, lng1, lat2, lng2) {
+    let earthRadius = 6371000; //meters
+    let dLat = (lat2 - lat1) * Math.PI / 180;
+    let dLng = (lng2 - lng1) * Math.PI / 180;
+    let a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+      Math.sin(dLng / 2) * Math.sin(dLng / 2);
+    let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    let dist = (earthRadius * c);
+
+    return dist;
+  }
+
+
+  computeDistanceToMe(demandList: DialogData[]): Promise<number[]> {
+    return new Promise((resolve, reject) => {
+
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          let result: number[] = [];
+          demandList.forEach(demand => {
+            result.push(this.distFrom(position.coords.latitude, position.coords.longitude, demand.forWhereLat, demand.forWhereLong));
+          });
+          resolve(result);
+        });
+      } else {
+        console.log("No support for geolocation");
+        reject()
+      }
+    });
+  }
+
+  formatDistance(distance: number): string {
+    if (!distance)
+      return "_ m";
+    if (distance > 1000) {
+      let distance_km = distance / 1000;
+      return "" + distance_km.toFixed() + " Km";
+    }
+    return "" + distance.toFixed() + " m";
+  }
+
+  getMapLink(demand: DialogData) {
+    return "https://www.google.com/maps/search/?api=1&query=" + demand.forWhereLat + "," + demand.forWhereLong;
   }
 
   onUpdate(demand) {

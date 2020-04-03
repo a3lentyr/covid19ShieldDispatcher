@@ -26,14 +26,15 @@
     <mat-card *ngFor="let demand of demandList" class="demandCard">
         <mat-card-header class="cardTitle">
             <mat-card-title>{{demand.forWho}}</mat-card-title>
-            <mat-card-subtitle>{{demand.howMany}} Visières</mat-card-subtitle>
+            <mat-card-subtitle>{{demand.howMany}} Visières à {{formatDistance(demand._distance_to_me)}}
+            </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content class="mainCardContent">
             {{demand.description}}
             <br>
             <p>
 
-                {{demand.forWhere}}
+                <a [href]="getMapLink(demand)" target="_blank">{{demand.forWhere}}</a>
             </p>
         </mat-card-content>
         <mat-card-actions>
