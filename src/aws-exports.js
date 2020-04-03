@@ -15,8 +15,8 @@ const awsmobile = {
             "profile",
             "aws.cognito.signin.user.admin"
         ],
-        "redirectSignIn": "https://www.visiere3dcovid.fr",
-        "redirectSignOut": "https://www.visiere3dcovid.fr",
+        "redirectSignIn": "https://master.d2klnf7x1s8sec.amplifyapp.com/",
+        "redirectSignOut": "https://master.d2klnf7x1s8sec.amplifyapp.com/",
         "responseType": "code"
     },
     "federationTarget": "COGNITO_USER_POOLS",

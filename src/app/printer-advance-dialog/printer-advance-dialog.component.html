@@ -1,39 +1,44 @@
 <h1 mat-dialog-title>J'imprime cette demande</h1>
 <div mat-dialog-content>
-    <mat-form-field class="fullWidth">
-        <mat-label>Email du Maker</mat-label>
-        <input matInput required [(ngModel)]="mockupData.printBy">
 
-    </mat-form-field>
+    <form #demandform="ngForm">
+        <mat-form-field class="fullWidth">
+            <mat-label>Email du Maker</mat-label>
+            <input matInput required [(ngModel)]="mockupData.printBy" name="printBy">
 
-    <mat-form-field class="fullWidth">
-        <mat-label>Statut de la demande</mat-label>
-        <input matInput required [(ngModel)]="mockupData.status">
-    </mat-form-field>
+        </mat-form-field>
 
-    <mat-form-field class="fullWidth">
-        <mat-label>Date estimée de fin d'impression</mat-label>
-        <input matInput required [(ngModel)]="mockupData.printEstimateDate">
-    </mat-form-field>
+        <mat-form-field class="fullWidth">
+            <mat-label>Statut de la demande</mat-label>
+            <input matInput required [(ngModel)]="mockupData.status" name="status">
+        </mat-form-field>
 
-    <mat-form-field class="fullWidth">
-        <mat-label>Prise en charge de la livraison</mat-label>
-        <input id="searchTextField" matInput required [(ngModel)]="mockupData.deliveryBy">
-    </mat-form-field>
+        <mat-form-field class="fullWidth">
+            <mat-label>Date estimée de fin d'impression</mat-label>
+            <input matInput required [(ngModel)]="mockupData.printEstimateDate" name="printEstimateDate">
+        </mat-form-field>
 
-    <mat-form-field class="fullWidth">
-        <mat-label>Addresse du lieu de dépot</mat-label>
-        <input id="searchTextField" matInput required [(ngModel)]="mockupData.deliveryWhere">
-    </mat-form-field>
+        <mat-form-field class="fullWidth">
+            <mat-label>Prise en charge de la livraison</mat-label>
+            <input id="searchTextField" matInput required [(ngModel)]="mockupData.deliveryBy" name="deliveryBy">
+        </mat-form-field>
+
+        <mat-form-field class="fullWidth">
+            <mat-label>Addresse du lieu de dépot</mat-label>
+            <input id="searchTextField" matInput required [(ngModel)]="mockupData.deliveryWhere" name="deliveryWhere">
+        </mat-form-field>
 
 
-    <mat-form-field class="fullWidth">
-        <mat-label>Commentaire</mat-label>
-        <input matInput required [(ngModel)]="mockupData.comment">
-    </mat-form-field>
+        <mat-form-field class="fullWidth">
+            <mat-label>Commentaire</mat-label>
+            <input matInput required [(ngModel)]="mockupData.comment" name="comment">
+        </mat-form-field>
+    </form>
 </div>
 <div mat-dialog-actions>
     <button mat-button (click)="onNoClick()">Annuler</button>
     <button mat-button (click)="onRejectClick()">Rejeter la demande</button>
-    <button mat-button color="primary" (click)="onValidateClick()" cdkFocusInitial>Mettre à jour la demande !</button>
+    <button mat-button color="primary" (click)="onValidateClick()" cdkFocusInitial
+        [disabled]="!demandform.form.valid">Mettre
+        à jour la demande !</button>
 </div>

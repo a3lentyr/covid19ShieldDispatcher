@@ -114,7 +114,7 @@
 					"hostedUIDomainName": "covid19sdbcc9ff73-bcc9ff73",
 					"authProvidersUserPool": "Facebook",
 					"hostedUIProviderMeta": "[{\"ProviderName\":\"Facebook\",\"authorize_scopes\":\"email,public_profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"id\"}}]",
-					"oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://www.visiere3dcovid.fr\"],\"LogoutURLs\":[\"https://www.visiere3dcovid.fr\"]}",
+					"oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://master.d2klnf7x1s8sec.amplifyapp.com/\"],\"LogoutURLs\":[\"https://master.d2klnf7x1s8sec.amplifyapp.com/\"]}",
 					"userPoolGroupList": "",
 					"dependsOn": "",
 					"hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"528517131399995\",\"client_secret\":\"db6e69ddb4c4c92b1b7692051614a37f\"}]",

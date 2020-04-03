@@ -1,22 +1,25 @@
 <h1 mat-dialog-title>Faire une nouvelle demande</h1>
 <div mat-dialog-content>
-    <p>Expliquez votre besoin et indiquez votre addresse :</p>
-    <mat-form-field class="fullWidth">
-        <mat-label>Email</mat-label>
-        <input matInput required [(ngModel)]="mockupData.forWho">
+    <form #demandform="ngForm">
+        <p>Expliquez votre besoin et indiquez votre addresse :</p>
+        <mat-form-field class="fullWidth">
+            <mat-label>Email</mat-label>
+            <input matInput required [(ngModel)]="mockupData.forWho" name="forWho">
 
-    </mat-form-field>
-    <mat-form-field class="fullWidth">
-        <mat-label>Description du besoin</mat-label>
-        <input matInput required [(ngModel)]="mockupData.description">
-    </mat-form-field>
+        </mat-form-field>
+        <mat-form-field class="fullWidth">
+            <mat-label>Description du besoin</mat-label>
+            <input matInput required [(ngModel)]="mockupData.description" name="description">
+        </mat-form-field>
 
-    <mat-form-field class="fullWidth">
-        <mat-label>Mon addresse</mat-label>
-        <input id="searchTextField" matInput required [(ngModel)]="mockupData.forWhere">
-    </mat-form-field>
+        <mat-form-field class="fullWidth">
+            <mat-label>Mon addresse</mat-label>
+            <input id="searchTextField" matInput required [(ngModel)]="mockupData.forWhere" name="forWhere">
+        </mat-form-field>
+    </form>
 </div>
 <div mat-dialog-actions>
     <button mat-button (click)="onNoClick()">Annuler</button>
-    <button mat-button color="primary" (click)="onValidateClick()" cdkFocusInitial>Envoyer la demande !</button>
+    <button mat-button color="primary" (click)="onValidateClick()" cdkFocusInitial
+        [disabled]="!demandform.form.valid">Envoyer la demande !</button>
 </div>
