@@ -22,7 +22,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/amplify-covid19sd-dev-191840-deployment/amplify-cfn-templates/auth/covid19sdbcc9ff73-cloudformation-template.yml",
 				"logicalId": "authcovid19sdbcc9ff73"
 			},
-			"lastPushTimeStamp": "2020-04-03T10:04:49.300Z",
+			"lastPushTimeStamp": "2020-04-03T11:27:44.492Z",
 			"output": {
 				"AppClientSecret": "ib42tccfl56vpafatq8abc6og8gerujff6sv9cgjvqkgihkjq5v",
 				"UserPoolId": "eu-west-2_03LU9EvRK",
@@ -35,6 +35,31 @@
 				"UserPoolName": "covid19sdbcc9ff73_userpool_bcc9ff73"
 			},
 			"lastPushDirHash": "38qgPq5QJhb016SVDju3ViwdDQI="
+		},
+		"userPoolGroups": {
+			"service": "Cognito-UserPool-Groups",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "auth",
+					"resourceName": "covid19sdbcc9ff73",
+					"attributes": [
+						"UserPoolId",
+						"AppClientIDWeb",
+						"AppClientID",
+						"IdentityPoolId"
+					]
+				}
+			],
+			"lastPushTimeStamp": "2020-04-03T11:27:44.628Z",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-covid19sd-dev-191840-deployment/amplify-cfn-templates/auth/template.json",
+				"logicalId": "authuserPoolGroups"
+			},
+			"output": {
+				"covid19sdGroupRole": "arn:aws:iam::657216723789:role/eu-west-2_03LU9EvRK-covid19sdGroupRole"
+			},
+			"lastPushDirHash": "xfqds0P0SxxjlztDTWIF1FgzHys="
 		}
 	},
 	"storage": {
@@ -45,7 +70,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/amplify-covid19sd-dev-191840-deployment/amplify-cfn-templates/storage/dynamo9f597ff1-cloudformation-template.json",
 				"logicalId": "storagedynamo9f597ff1"
 			},
-			"lastPushTimeStamp": "2020-04-03T10:04:49.174Z",
+			"lastPushTimeStamp": "2020-04-03T11:27:44.523Z",
 			"output": {
 				"PartitionKeyName": "forWho",
 				"Region": "eu-west-2",
@@ -74,7 +99,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/amplify-covid19sd-dev-191840-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
 				"logicalId": "storagestatic"
 			},
-			"lastPushTimeStamp": "2020-04-03T10:04:49.189Z",
+			"lastPushTimeStamp": "2020-04-03T11:27:44.539Z",
 			"output": {
 				"BucketName": "covid19sd35467e3530b849caa746ddae0ca31395191840-dev",
 				"Region": "eu-west-2"
@@ -88,7 +113,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/amplify-covid19sd-dev-191840-deployment/amplify-cfn-templates/storage/demand-cloudformation-template.json",
 				"logicalId": "storagedemand"
 			},
-			"lastPushTimeStamp": "2020-04-03T10:04:49.204Z",
+			"lastPushTimeStamp": "2020-04-03T11:27:44.554Z",
 			"output": {
 				"PartitionKeyName": "demandId",
 				"Region": "eu-west-2",
@@ -112,7 +137,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/amplify-covid19sd-dev-191840-deployment/amplify-cfn-templates/function/S3Triggerae9fd039-cloudformation-template.json",
 				"logicalId": "functionS3Triggerae9fd039"
 			},
-			"lastPushTimeStamp": "2020-04-03T10:04:49.226Z",
+			"lastPushTimeStamp": "2020-04-03T11:27:44.569Z",
 			"output": {
 				"Region": "eu-west-2",
 				"Arn": "arn:aws:lambda:eu-west-2:657216723789:function:S3Triggerae9fd039-dev",
@@ -146,7 +171,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/amplify-covid19sd-dev-191840-deployment/amplify-cfn-templates/function/demandAllLambda-cloudformation-template.json",
 				"logicalId": "functiondemandAllLambda"
 			},
-			"lastPushTimeStamp": "2020-04-03T10:04:49.243Z",
+			"lastPushTimeStamp": "2020-04-03T11:27:44.584Z",
 			"output": {
 				"Region": "eu-west-2",
 				"Arn": "arn:aws:lambda:eu-west-2:657216723789:function:demandAllLambda-dev",
@@ -180,7 +205,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/amplify-covid19sd-dev-191840-deployment/amplify-cfn-templates/function/singleDemand-cloudformation-template.json",
 				"logicalId": "functionsingleDemand"
 			},
-			"lastPushTimeStamp": "2020-04-03T10:04:49.263Z",
+			"lastPushTimeStamp": "2020-04-03T11:27:44.598Z",
 			"output": {
 				"Region": "eu-west-2",
 				"Arn": "arn:aws:lambda:eu-west-2:657216723789:function:singleDemand-dev",
@@ -208,7 +233,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/amplify-covid19sd-dev-191840-deployment/amplify-cfn-templates/api/demandAPI-cloudformation-template.json",
 				"logicalId": "apidemandAPI"
 			},
-			"lastPushTimeStamp": "2020-04-03T10:04:49.280Z",
+			"lastPushTimeStamp": "2020-04-03T11:27:44.613Z",
 			"output": {
 				"ApiName": "demandAPI",
 				"RootUrl": "https://2yqw9bjer6.execute-api.eu-west-2.amazonaws.com/dev",

@@ -49,12 +49,14 @@
     "usernameAttributes": [
         "email"
     ],
-    "userPoolGroupList": [],
+    "userPoolGroupList": [
+        "covid19sd"
+    ],
     "dependsOn": [],
     "hostedUIDomainName": "covid19sd",
     "authProvidersUserPool": [
         "Facebook"
     ],
     "hostedUIProviderMeta": "[{\"ProviderName\":\"Facebook\",\"authorize_scopes\":\"email,public_profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"id\"}}]",
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://www.visiere3dcovid.fr/\",\"http://localhost:3000/\"],\"LogoutURLs\":[\"https://www.visiere3dcovid.fr/\",\"http://localhost:300/\"]}"
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://www.visiere3dcovid.fr/\"],\"LogoutURLs\":[\"https://www.visiere3dcovid.fr/\"]}"
 }

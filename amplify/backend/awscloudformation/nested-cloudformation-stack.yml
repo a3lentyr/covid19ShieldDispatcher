@@ -122,6 +122,51 @@
 				}
 			}
 		},
+		"authuserPoolGroups": {
+			"Type": "AWS::CloudFormation::Stack",
+			"Properties": {
+				"TemplateURL": "https://s3.amazonaws.com/amplify-covid19sd-dev-191840-deployment/amplify-cfn-templates/auth/template.json",
+				"Parameters": {
+					"AuthRoleArn": {
+						"Fn::GetAtt": [
+							"AuthRole",
+							"Arn"
+						]
+					},
+					"UnauthRoleArn": {
+						"Fn::GetAtt": [
+							"UnauthRole",
+							"Arn"
+						]
+					},
+					"authcovid19sdbcc9ff73UserPoolId": {
+						"Fn::GetAtt": [
+							"authcovid19sdbcc9ff73",
+							"Outputs.UserPoolId"
+						]
+					},
+					"authcovid19sdbcc9ff73AppClientIDWeb": {
+						"Fn::GetAtt": [
+							"authcovid19sdbcc9ff73",
+							"Outputs.AppClientIDWeb"
+						]
+					},
+					"authcovid19sdbcc9ff73AppClientID": {
+						"Fn::GetAtt": [
+							"authcovid19sdbcc9ff73",
+							"Outputs.AppClientID"
+						]
+					},
+					"authcovid19sdbcc9ff73IdentityPoolId": {
+						"Fn::GetAtt": [
+							"authcovid19sdbcc9ff73",
+							"Outputs.IdentityPoolId"
+						]
+					},
+					"env": "dev"
+				}
+			}
+		},
 		"storagedynamo9f597ff1": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
