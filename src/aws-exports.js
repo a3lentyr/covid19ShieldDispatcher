@@ -7,7 +7,7 @@ const awsmobile = {
     "aws_user_pools_id": "eu-west-2_03LU9EvRK",
     "aws_user_pools_web_client_id": "2lrq7d58t7dh5rj7kdp127r1sj",
     "oauth": {
-        "domain": "covid19sdbcc9ff73-bcc9ff73-dev.auth.eu-west-2.amazoncognito.com",
+        "domain": "covid19sd-dev.auth.eu-west-2.amazoncognito.com",
         "scope": [
             "phone",
             "email",
@@ -15,8 +15,8 @@ const awsmobile = {
             "profile",
             "aws.cognito.signin.user.admin"
         ],
-        "redirectSignIn": "https://master.d2klnf7x1s8sec.amplifyapp.com/",
-        "redirectSignOut": "https://master.d2klnf7x1s8sec.amplifyapp.com/",
+        "redirectSignIn": "https://www.visiere3dcovid.fr/,http://localhost:3000/",
+        "redirectSignOut": "https://www.visiere3dcovid.fr/,http://localhost:300/",
         "responseType": "code"
     },
     "federationTarget": "COGNITO_USER_POOLS",
