@@ -9,6 +9,7 @@ import { DialogData } from '../types';
 import { AuthServiceService } from '../auth-service.service';
 
 import { Router } from '@angular/router';
+import { PrinterAdvanceDialogComponent } from '../printer-advance-dialog/printer-advance-dialog.component';
 
 @Component({
   selector: 'app-home-page',
@@ -106,11 +107,23 @@ export class HomePageComponent implements OnInit {
     })
   }
 
-  onRemove(demand) {
+  onRemoveDialog() {
     if (!this.signedIn) {
       this.auth.onSignIn();
       return
     }
+    const dialogRef = this.dialog.open(PrinterAdvanceDialogComponent, {
+      width: '500px',
+      data: { email: this.user.email }
+    });
+
+    dialogRef.afterClosed().subscribe((result: DialogData) => {
+      if (result)
+        this.onRemove(result);
+    });
+  }
+
+  onRemove(demand) {
     let demandId = demand.demandId;
     this.amplifyService.api().del('demandAPI', '/demand/object/' + demandId, {}).then(data => {
       this.updateList();
