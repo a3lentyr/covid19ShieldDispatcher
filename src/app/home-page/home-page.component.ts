@@ -81,7 +81,13 @@ export class HomePageComponent implements OnInit {
           this.demandList[index]["_distance_to_me"] = result[index];
 
         }
-        this.demandList.sort((a, b) => a["_distance_to_me"] - b["_distance_to_me"]);
+        this.demandList.sort((a, b) => {
+          // lowest status first then distance
+          if (a["status"] != b["status"])
+            return a["status"] - b["status"];
+
+          return a["_distance_to_me"] - b["_distance_to_me"];
+        });
       })
 
     });
@@ -130,7 +136,8 @@ export class HomePageComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result: DialogData) => {
       if (result) {
-        if (result.status == -1) {
+        if (result.status == -10) {
+          // deletion
           this.onRemove(result);
 
         } else {
@@ -184,7 +191,14 @@ export class HomePageComponent implements OnInit {
     return "" + distance.toFixed() + " m";
   }
 
-  getMapLink(demand: DialogData) {
+  formateDate(demand: DialogData): string {
+    return demand.printEstimateDate.split("T")[0];
+
+  }
+
+  getMapLink(demand: DialogData, delivery: boolean) {
+    if (delivery)
+      return "https://www.google.com/maps/search/?api=1&query=" + demand.deliveryWhereLat + "," + demand.deliveryWhereLong;
     return "https://www.google.com/maps/search/?api=1&query=" + demand.forWhereLat + "," + demand.forWhereLong;
   }
 

@@ -23,18 +23,31 @@
 <div class="demandContainer">
     <div #gmap class="map"></div>
 
-    <mat-card *ngFor="let demand of demandList" class="demandCard">
+    <mat-card *ngFor="let demand of demandList" class="demandCard" [ngClass]="{
+        'statusStarted': demand.status>0,
+
+        'statusDone': demand.status>=100,
+        'statusreject': demand.status<0
+      }">
         <mat-card-header class="cardTitle">
             <mat-card-title>{{demand.forWho}}</mat-card-title>
             <mat-card-subtitle>{{demand.howMany}} Visières à {{formatDistance(demand._distance_to_me)}}
             </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content class="mainCardContent">
+            <p *ngIf="demand.status>0 && demand.status<30 ">Estimé pour {{formateDate(demand)}}</p>
+            <p *ngIf="demand.status==20">Production démarrée !</p>
+            <p *ngIf="demand.status==30">En attente de livraison : {{demand.deliveryBy}}</p>
+            <p *ngIf="demand.status==30 && demand.deliveryWhere!=='_'"><a [href]="getMapLink(demand,true)"
+                    target="_blank">{{demand.deliveryWhere}}</a></p>
+            <p *ngIf="demand.status==40">Confirmez la réception</p>
+
+            <p *ngIf="demand.status==100">C'est fait !</p>
             {{demand.description}}
             <br>
             <p>
 
-                <a [href]="getMapLink(demand)" target="_blank">{{demand.forWhere}}</a>
+                <a [href]="getMapLink(demand,false)" target="_blank">{{demand.forWhere}}</a>
             </p>
         </mat-card-content>
         <mat-card-actions>
