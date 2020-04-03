@@ -53,7 +53,7 @@ export class HomePageComponent implements OnInit {
 
     // init map
     var mapProp = {
-      center: new google.maps.LatLng(18.5793, 73.8143),
+      center: new google.maps.LatLng(43.6047, 1.4442),
       zoom: 11,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };

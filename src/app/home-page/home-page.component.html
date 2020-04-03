@@ -24,7 +24,7 @@
     <div #gmap class="map"></div>
 
     <mat-card *ngFor="let demand of demandList" class="demandCard" [ngClass]="{
-        'statusStarted': demand.status>0,
+        'statusStarted': (demand.status>0 && demand.status<100),
 
         'statusDone': demand.status>=100,
         'statusreject': demand.status<0
