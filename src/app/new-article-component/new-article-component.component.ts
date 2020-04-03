@@ -29,9 +29,13 @@ export class NewArticleComponentComponent implements OnInit {
       model: "shield_v1",
       status: 0,
       printBy: "_none",
-      deliveryBy: "_none",
+      printEstimateDate: "inconnue",
+      deliveryBy: "Retrait sur place",
+      deliveryWhere: "",
+      deliveryWhereLong: 0,
+      deliveryWhereLat: 0,
       logHistory: [],
-      comment: "_none"
+      comment: "Aucun",
     };
 
     var options = {
@@ -50,7 +54,6 @@ export class NewArticleComponentComponent implements OnInit {
 
   onValidateClick(): void {
     var place = this.autocomplete.getPlace();
-    console.log(place);
     this.mockupData.forWhere = place.formatted_address;
     this.mockupData.forWhereLat = place.geometry.location.lat();
     this.mockupData.forWhereLong = place.geometry.location.lng();

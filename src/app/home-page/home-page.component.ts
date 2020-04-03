@@ -107,20 +107,36 @@ export class HomePageComponent implements OnInit {
     })
   }
 
-  onRemoveDialog() {
-    if (!this.signedIn) {
+  onRemoveDialog(demand) {
+    /*if (!this.signedIn) {
       this.auth.onSignIn();
       return
-    }
+    }*/
     const dialogRef = this.dialog.open(PrinterAdvanceDialogComponent, {
       width: '500px',
-      data: { email: this.user.email }
+      data: { email: this.user.email, demand: demand }
     });
 
     dialogRef.afterClosed().subscribe((result: DialogData) => {
-      if (result)
-        this.onRemove(result);
+      if (result) {
+        if (result.status == -1) {
+          this.onRemove(result);
+
+        } else {
+          this.onUpdate(result);
+
+        }
+
+      }
     });
+  }
+
+  onUpdate(demand) {
+    let demandId = demand.demandId;
+    this.amplifyService.api().put('demandAPI', '/demand/object/' + demandId, {}).then(data => {
+      this.updateList();
+    });
+
   }
 
   onRemove(demand) {

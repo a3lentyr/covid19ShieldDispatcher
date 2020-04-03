@@ -10,7 +10,11 @@ export interface DialogData {
     model: string;
     status: number;
     printBy: string;
+    printEstimateDate: string;
     deliveryBy: string;
+    deliveryWhere: string;
+    deliveryWhereLong: number;
+    deliveryWhereLat: number;
     logHistory: Array<any>;
     comment: string;
 }
