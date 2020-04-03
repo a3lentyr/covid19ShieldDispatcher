@@ -2,7 +2,7 @@
 
     display:flex;
     flex-wrap: wrap;
-    margin:50px;
+    margin:20px;
 
     align-items: center;
     justify-content: center;
@@ -10,7 +10,8 @@
 
 .majorAction{
     padding:20px;
-    margin:auto;
+    margin:20px;
+    height:200px;
     width:300px;
     text-align: center;
     background:rgb(200,200,255);
@@ -30,10 +31,15 @@
     margin:auto;
 }
 
+.map{
+    width:300px;
+    height:300px;
+}
+
 .demandCard {
     margin:20px;
-    width:200px;
-    height:200px;
+    width:250px;
+    height:250px;
 }
 
 .cardTitle{
@@ -42,7 +48,11 @@
 
 .mainCardContent{
     width:100%;
-    height:80px;
+    height:120px;
+}
+
+.demandButtton{
+    float:right;
 }
 
 

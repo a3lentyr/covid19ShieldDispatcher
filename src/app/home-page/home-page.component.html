@@ -21,7 +21,7 @@
 </div>
 
 <div class="demandContainer">
-    <div #gmap style="width:30%;height:300px"></div>
+    <div #gmap class="map"></div>
 
     <mat-card *ngFor="let demand of demandList" class="demandCard">
         <mat-card-header class="cardTitle">
@@ -37,7 +37,7 @@
             </p>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-raised-button color="primary" (click)="onRemove(demand)">Je participe
+            <button mat-raised-button color="primary" (click)="onRemove(demand)" class="demandButtton">Je participe
                 !</button>
         </mat-card-actions>
     </mat-card>

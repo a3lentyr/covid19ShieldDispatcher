@@ -1,4 +1,15 @@
+.desktop {
+    display: none;
+  }
 
+@media screen and (min-width: 701px) {
+    .mobile {
+      display: none;
+    }
+    .desktop {
+      display: block;
+    }
+  }
 
 .loginBar{
     float:right;
