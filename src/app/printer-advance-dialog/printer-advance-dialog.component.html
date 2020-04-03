@@ -10,14 +10,20 @@
 
         <mat-form-field class="fullWidth">
             <mat-label>Statut de la demande</mat-label>
-            <input matInput required [(ngModel)]="mockupData.status" name="status">
+            <mat-select required [(ngModel)]="mockupData.status" name="status">
+                <mat-option *ngFor="let status of statusList" [value]="status.value">
+                    {{status.viewValue}}
+                </mat-option>
+            </mat-select>
         </mat-form-field>
 
         <mat-form-field class="fullWidth">
             <mat-label>Date estimée de fin d'impression</mat-label>
-            <input matInput required [(ngModel)]="mockupData.printEstimateDate" name="printEstimateDate">
+            <input matInput required [matDatepicker]="picker" [(ngModel)]="mockupData.printEstimateDate"
+                name="printEstimateDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
-
         <mat-form-field class="fullWidth">
             <mat-label>Prise en charge de la livraison</mat-label>
             <input id="searchTextField" matInput required [(ngModel)]="mockupData.deliveryBy" name="deliveryBy">

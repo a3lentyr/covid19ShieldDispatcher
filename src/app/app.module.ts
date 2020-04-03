@@ -13,6 +13,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule, } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 import { NewArticleComponentComponent } from './new-article-component/new-article-component.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -42,7 +45,10 @@ import { PrinterAdvanceDialogComponent } from './printer-advance-dialog/printer-
     MatIconModule,
     MatDialogModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   entryComponents: [
     NewArticleComponentComponent,
@@ -51,7 +57,9 @@ import { PrinterAdvanceDialogComponent } from './printer-advance-dialog/printer-
 
   providers: [
     AmplifyService,
-    AuthServiceService
+    AuthServiceService,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   bootstrap: [AppComponent]
 })

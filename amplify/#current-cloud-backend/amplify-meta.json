@@ -22,7 +22,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/amplify-covid19sd-dev-191840-deployment/amplify-cfn-templates/auth/covid19sdbcc9ff73-cloudformation-template.yml",
 				"logicalId": "authcovid19sdbcc9ff73"
 			},
-			"lastPushTimeStamp": "2020-04-03T11:27:44.492Z",
+			"lastPushTimeStamp": "2020-04-03T11:42:06.301Z",
 			"output": {
 				"AppClientSecret": "ib42tccfl56vpafatq8abc6og8gerujff6sv9cgjvqkgihkjq5v",
 				"UserPoolId": "eu-west-2_03LU9EvRK",
@@ -31,10 +31,10 @@
 				"HostedUIDomain": "covid19sd-dev",
 				"IdentityPoolId": "eu-west-2:826ba5bf-ed46-4537-993f-80e0339fbc7a",
 				"IdentityPoolName": "covid19sdbcc9ff73_identitypool_bcc9ff73__dev",
-				"OAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://www.visiere3dcovid.fr/\",\"http://localhost:3000/\"],\"LogoutURLs\":[\"https://www.visiere3dcovid.fr/\",\"http://localhost:300/\"]}",
+				"OAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://www.visiere3dcovid.fr/\"],\"LogoutURLs\":[\"https://www.visiere3dcovid.fr/\"]}",
 				"UserPoolName": "covid19sdbcc9ff73_userpool_bcc9ff73"
 			},
-			"lastPushDirHash": "38qgPq5QJhb016SVDju3ViwdDQI="
+			"lastPushDirHash": "pr2LrZHbDsSutHiJGWNi0SGQPVc="
 		},
 		"userPoolGroups": {
 			"service": "Cognito-UserPool-Groups",
@@ -51,7 +51,7 @@
 					]
 				}
 			],
-			"lastPushTimeStamp": "2020-04-03T11:27:44.628Z",
+			"lastPushTimeStamp": "2020-04-03T11:42:06.189Z",
 			"providerMetadata": {
 				"s3TemplateURL": "https://s3.amazonaws.com/amplify-covid19sd-dev-191840-deployment/amplify-cfn-templates/auth/template.json",
 				"logicalId": "authuserPoolGroups"
@@ -70,7 +70,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/amplify-covid19sd-dev-191840-deployment/amplify-cfn-templates/storage/dynamo9f597ff1-cloudformation-template.json",
 				"logicalId": "storagedynamo9f597ff1"
 			},
-			"lastPushTimeStamp": "2020-04-03T11:27:44.523Z",
+			"lastPushTimeStamp": "2020-04-03T11:42:06.203Z",
 			"output": {
 				"PartitionKeyName": "forWho",
 				"Region": "eu-west-2",
@@ -99,7 +99,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/amplify-covid19sd-dev-191840-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
 				"logicalId": "storagestatic"
 			},
-			"lastPushTimeStamp": "2020-04-03T11:27:44.539Z",
+			"lastPushTimeStamp": "2020-04-03T11:42:06.218Z",
 			"output": {
 				"BucketName": "covid19sd35467e3530b849caa746ddae0ca31395191840-dev",
 				"Region": "eu-west-2"
@@ -113,7 +113,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/amplify-covid19sd-dev-191840-deployment/amplify-cfn-templates/storage/demand-cloudformation-template.json",
 				"logicalId": "storagedemand"
 			},
-			"lastPushTimeStamp": "2020-04-03T11:27:44.554Z",
+			"lastPushTimeStamp": "2020-04-03T11:42:06.231Z",
 			"output": {
 				"PartitionKeyName": "demandId",
 				"Region": "eu-west-2",
@@ -137,7 +137,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/amplify-covid19sd-dev-191840-deployment/amplify-cfn-templates/function/S3Triggerae9fd039-cloudformation-template.json",
 				"logicalId": "functionS3Triggerae9fd039"
 			},
-			"lastPushTimeStamp": "2020-04-03T11:27:44.569Z",
+			"lastPushTimeStamp": "2020-04-03T11:42:06.245Z",
 			"output": {
 				"Region": "eu-west-2",
 				"Arn": "arn:aws:lambda:eu-west-2:657216723789:function:S3Triggerae9fd039-dev",
@@ -171,7 +171,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/amplify-covid19sd-dev-191840-deployment/amplify-cfn-templates/function/demandAllLambda-cloudformation-template.json",
 				"logicalId": "functiondemandAllLambda"
 			},
-			"lastPushTimeStamp": "2020-04-03T11:27:44.584Z",
+			"lastPushTimeStamp": "2020-04-03T11:42:06.258Z",
 			"output": {
 				"Region": "eu-west-2",
 				"Arn": "arn:aws:lambda:eu-west-2:657216723789:function:demandAllLambda-dev",
@@ -205,7 +205,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/amplify-covid19sd-dev-191840-deployment/amplify-cfn-templates/function/singleDemand-cloudformation-template.json",
 				"logicalId": "functionsingleDemand"
 			},
-			"lastPushTimeStamp": "2020-04-03T11:27:44.598Z",
+			"lastPushTimeStamp": "2020-04-03T11:42:06.272Z",
 			"output": {
 				"Region": "eu-west-2",
 				"Arn": "arn:aws:lambda:eu-west-2:657216723789:function:singleDemand-dev",
@@ -233,7 +233,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/amplify-covid19sd-dev-191840-deployment/amplify-cfn-templates/api/demandAPI-cloudformation-template.json",
 				"logicalId": "apidemandAPI"
 			},
-			"lastPushTimeStamp": "2020-04-03T11:27:44.613Z",
+			"lastPushTimeStamp": "2020-04-03T11:42:06.286Z",
 			"output": {
 				"ApiName": "demandAPI",
 				"RootUrl": "https://2yqw9bjer6.execute-api.eu-west-2.amazonaws.com/dev",

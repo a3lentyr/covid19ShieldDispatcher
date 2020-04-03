@@ -12,7 +12,16 @@ export class PrinterAdvanceDialogComponent implements OnInit {
   mockupData: DialogData;
 
   autocomplete: google.maps.places.Autocomplete;
-
+  statusList = [
+    { value: 0, viewValue: "Demandé" },
+    { value: 10, viewValue: "Pris en charge par Printer" },
+    { value: 20, viewValue: "Production démarrée" },
+    { value: 30, viewValue: "En attente de livraison" },
+    { value: 40, viewValue: "En attente de confirmation de réception" },
+    { value: 100, viewValue: "Terminé" },
+    { value: -1, viewValue: "Marqué pour rejet" },
+    { value: -10, viewValue: "Rejeté" }
+  ]
   constructor(
     public dialogRef: MatDialogRef<PrinterAdvanceDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data) {
@@ -22,6 +31,13 @@ export class PrinterAdvanceDialogComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    var options = {
+
+    };
+
+    var input = <HTMLInputElement>document.getElementById('searchTextField');
+    this.autocomplete = new google.maps.places.Autocomplete(input, options);
 
   }
 

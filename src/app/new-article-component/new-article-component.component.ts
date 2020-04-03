@@ -31,7 +31,7 @@ export class NewArticleComponentComponent implements OnInit {
       printBy: "_none",
       printEstimateDate: "inconnue",
       deliveryBy: "Retrait sur place",
-      deliveryWhere: "",
+      deliveryWhere: "_",
       deliveryWhereLong: 0,
       deliveryWhereLat: 0,
       logHistory: [],
@@ -39,8 +39,6 @@ export class NewArticleComponentComponent implements OnInit {
     };
 
     var options = {
-      types: ['address'],
-
     };
 
     var input = <HTMLInputElement>document.getElementById('searchTextField');

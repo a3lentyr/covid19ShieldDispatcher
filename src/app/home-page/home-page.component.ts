@@ -108,10 +108,10 @@ export class HomePageComponent implements OnInit {
   }
 
   onRemoveDialog(demand) {
-    /*if (!this.signedIn) {
+    if (!this.signedIn) {
       this.auth.onSignIn();
       return
-    }*/
+    }
     const dialogRef = this.dialog.open(PrinterAdvanceDialogComponent, {
       width: '500px',
       data: { email: this.user.email, demand: demand }
