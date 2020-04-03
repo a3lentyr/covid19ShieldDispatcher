@@ -105,6 +105,7 @@ export class HomePageComponent implements OnInit {
     }
     const dialogRef = this.dialog.open(NewArticleComponentComponent, {
       width: '500px',
+      maxHeight: '90vh',
       data: { email: this.user.email }
     });
 
@@ -131,6 +132,7 @@ export class HomePageComponent implements OnInit {
     }
     const dialogRef = this.dialog.open(PrinterAdvanceDialogComponent, {
       width: '500px',
+      maxHeight: '90vh',
       data: { email: this.user.email, demand: demand }
     });
 
